@@ -1,0 +1,26 @@
+# Simple Fake News Detector (Rule Based - Clean Output)
+
+def detect_fake_news(text):
+    # Some common "fake news" keywords
+    fake_keywords = [
+        "shocking", "click here", "won a lottery", "get rich quick",
+        "secret cure", "miracle", "guaranteed", "100% free"
+    ]
+    
+    # Check if any fake keyword is in the news text
+    for word in fake_keywords:
+        if word.lower() in text.lower():
+            return "FAKE NEWS (suspicious content found)"
+    
+    return "REAL NEWS (no suspicious keywords found)"
+
+
+
+# Example usage
+
+
+news1 = "Breaking: Scientists discover water on Mars"
+news2 = "You won a lottery of $1,000,000!!! Click here to claim"
+
+print("News 1:", detect_fake_news(news1))
+print("News 2:", detect_fake_news(news2))
